@@ -1,4 +1,4 @@
-# Copyright 2023 Jeremy Edwards
+# Copyright 2023 Cloudfra Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,4 +13,4 @@
 # limitations under the License.
 
 FROM debian:latest
-LABEL maintainer="http://www.futonredemption.com <jeremyje@gmail.com>"
+LABEL maintainer="https://github.com/cloudfra <cloudfra@googlegroups.com>"

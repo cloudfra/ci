@@ -1,4 +1,4 @@
-# Copyright 2023 Jeremy Edwards
+# Copyright 2023 Cloudfra Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -120,7 +120,7 @@ jobs:
         id: docker-metadata-ghcr-io-debian
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/jeremyje/ci-core
+          images: ghcr.io/cloudfra/ci-core
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -151,7 +151,7 @@ jobs:
         id: docker-metadata-ghcr-io-ubuntu
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/jeremyje/ci-core
+          images: ghcr.io/cloudfra/ci-core
           tags: |
             type=ref,event=branch
             type=ref,event=pr

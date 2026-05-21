@@ -1,4 +1,4 @@
-# Copyright 2023 Jeremy Edwards
+# Copyright 2023 Cloudfra Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 # limitations under the License.
 
 FROM ubuntu:latest
-LABEL maintainer="http://www.futonredemption.com <jeremyje@gmail.com>"
+LABEL maintainer="https://github.com/cloudfra <cloudfra@googlegroups.com>"
 
 RUN apt-get -qq -y update \
   && DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \

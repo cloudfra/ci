@@ -7,7 +7,7 @@ jobs:
   ci:
     runs-on: self-hosted
     container:
-      image: docker.io/jeremyje/ci-core:canary
+      image: docker.io/cloudfra/ci-core:canary
     permissions:
       packages: write
       contents: write
@@ -23,5 +23,5 @@ jobs:
 
 ## Links
 
-* [GitHub](https://github.com/jeremyje/ci)
-* [Docker Hub](https://hub.docker.com/repository/docker/jeremyje/ci-core/)
+* [GitHub](https://github.com/cloudfra/ci)
+* [Docker Hub](https://hub.docker.com/repository/docker/cloudfra/ci-core/)
