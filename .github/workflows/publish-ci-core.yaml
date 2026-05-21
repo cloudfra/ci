@@ -62,17 +62,17 @@ jobs:
 
       # https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#publishing-a-package-using-an-action
       - name: Build and Push to Docker Hub (Debian)
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
           file: ./ci-core/Dockerfile.debian
           context: .
           tags: |
-            docker.io/${{ github.actor }}/ci-core:canary
-            docker.io/${{ github.actor }}/ci-core:${{ github.sha }}
-            docker.io/${{ github.actor }}/ci-core:${{ github.run_id }}
-            docker.io/${{ github.actor }}/ci-core:${{ steps.prep.outputs.build_date }}
+            docker.io/cloudfra/ci-core:canary
+            docker.io/cloudfra/ci-core:${{ github.sha }}
+            docker.io/cloudfra/ci-core:${{ github.run_id }}
+            docker.io/cloudfra/ci-core:${{ steps.prep.outputs.build_date }}
           labels: |
             org.opencontainers.image.title=Continuous Integration (Debian)
             org.opencontainers.image.description=Continuous Integration Image (Debian)
@@ -85,17 +85,17 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
 
       - name: Build and Push to Docker Hub (Ubuntu)
-        uses:  docker/build-push-action@v7
+        uses: docker/build-push-action@v7
         with:
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
           file: ./ci-core/Dockerfile.ubuntu
           context: .
           tags: |
-            docker.io/${{ github.actor }}/ci-core:canary-ubuntu
-            docker.io/${{ github.actor }}/ci-core:${{ github.sha }}-ubuntu
-            docker.io/${{ github.actor }}/ci-core:${{ github.run_id }}-ubuntu
-            docker.io/${{ github.actor }}/ci-core:${{ steps.prep.outputs.build_date }}-ubuntu
+            docker.io/cloudfra/ci-core:canary-ubuntu
+            docker.io/cloudfra/ci-core:${{ github.sha }}-ubuntu
+            docker.io/cloudfra/ci-core:${{ github.run_id }}-ubuntu
+            docker.io/cloudfra/ci-core:${{ steps.prep.outputs.build_date }}-ubuntu
           labels: |
             org.opencontainers.image.title=Continuous Integration (Ubuntu)
             org.opencontainers.image.description=Continuous Integration Image (Ubuntu)
@@ -118,7 +118,7 @@ jobs:
       - name: Docker Metadata (ghcr.io, Debian)
         # https://github.com/docker/metadata-action#about
         id: docker-metadata-ghcr-io-debian
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ghcr.io/cloudfra/ci-core
           tags: |
@@ -138,7 +138,7 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
 
       - name: Build and Push to ghcr.io (Debian)
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
@@ -169,7 +169,7 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
 
       - name: Build and Push to ghcr.io (Ubuntu)
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
