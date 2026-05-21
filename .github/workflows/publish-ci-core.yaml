@@ -149,7 +149,7 @@ jobs:
 
       - name: Docker Metadata (ghcr.io, Ubuntu)
         id: docker-metadata-ghcr-io-ubuntu
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ghcr.io/cloudfra/ci-core
           tags: |
