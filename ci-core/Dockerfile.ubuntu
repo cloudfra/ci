@@ -20,7 +20,9 @@ RUN apt-get -qq -y update \
     apt-transport-https \
     build-essential \
     ca-certificates \
+    clang \
     curl \
+    gcc \
     git \
     gnupg \
     lsb-release \
